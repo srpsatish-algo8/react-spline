@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Spline from '@splinetool/react-spline';
 
 function App() {
+  function onMouseDown(e) {
+    if (e.target.name === 'Cube') {
+      console.log('I have been clicked!');
+    }
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Spline scene="https://prod.spline.design/IjCqedQOi8DWEnrA/scene.splinecode" onMouseDown={onMouseDown} />
     </div>
   );
 }
